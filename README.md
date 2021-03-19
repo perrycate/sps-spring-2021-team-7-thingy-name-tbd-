@@ -4,10 +4,10 @@ A website that connects the homeless to shelter.
 
 ## Running Locally
 
-Redirect to App/src/main and run:
+Redirect to ./App and run:
 
 ```bash
-mvn package exc:java
+mvn package exec:java
 ```
 The application should then run on port 8080.
 
