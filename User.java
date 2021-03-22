@@ -1,18 +1,20 @@
 
 public class User {
 	/*For the User class the fields needed are:
-	 * Name, age, city, state, dissabilities, and
+	 * Name, age, city, state, disabilities, and
 	 * number of families.
      * 
-     * I added simple setters and getters and some boolean methods 
-     * that decide whether or not the user is a minor
+     * Class also contains multiple methods for creating and sending the
+     * information of the user
+     * 
 	 * */
 	private String name;
 	private int age;
 	private String city;
 	private String state;
 	private String disabilities;
-	private int numOfFamMembers;
+    private int numOfFamMembers;
+    private static final int ADULT_AGE = 18;
 	public User(String name, int age, String city, String state, String disabilities, int numOfFamMembers) {
 		this.name = name;
 		this.age = age;
@@ -66,7 +68,7 @@ public class User {
         return numOfFamMembers;
     }
     public boolean isAdult(){
-        return age>=18;
+        return age>=ADULT_AGE;
     }
     public boolean haveFamMembers(){
         return numOfFamMembers>0;
