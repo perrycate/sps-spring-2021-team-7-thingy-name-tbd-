@@ -1,6 +1,7 @@
 public class Shelter{
-/*The shelter class contains a var for the 
-name of shelter, location, phone number, and description*/
+/*The shelter class contains contact information for homeless shelters, 
+and some validation logic for verifying phone numbers
+*/
     private String name;
     private String location;
     private int phoneNum;
