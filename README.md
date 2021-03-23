@@ -13,10 +13,10 @@ The application should then run on port 8080.
 
 
 ## Team 7
-[Perry Cate](https://github.com/perrycate)
-
-[Cameron Payton](https://github.com)
+[Cameron Payton](https://github.com/cpayton-source)
 
 [Diego Rodrigues](https://github.com/diegoro1)
 
-[Jacinda Soto](https://github.com)
+[Jacinda Soto](https://github.com/jacinda22)
+
+[Perry Cate](https://github.com/perrycate)(Advisor)
