@@ -8,9 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/form-handler")
 public class FormHandlerServlet extends HttpServlet {
+    // switch to true to log data before validating 
+    private static final boolean DEBUGGING = false;
 
     private void serverLog(
-        String name, String age, String city, String state, Integer numberOfFamilyMemebers
+        String name, String age, String city, String state, String numberOfFamilyMemebers
     ) {
         System.out.println("------------------------");
         System.out.println("Name: " + name);
@@ -18,6 +20,23 @@ public class FormHandlerServlet extends HttpServlet {
         System.out.println("State " + state);
         System.out.println("# Family members: " + numberOfFamilyMemebers);
         System.out.println("------------------------");
+    }
+
+    private void checkIfValid(
+        String name, String age, String city, String state, String numberOfFamilyMemebers
+    ) {
+        if (name == null || name.length() < 2) {
+            System.out.println("Name is too short");
+        }
+        if (age == null || age.length() > 3) {
+            System.out.println("Age out of range");
+        }
+        if (city == null || city.length() < 2) {
+            System.out.print("City name too small");
+        }
+        if (numberOfFamilyMemebers == null || numberOfFamilyMemebers.length() < 1) {
+            System.out.println("Family is too small");
+        }
     }
 
     @Override
@@ -28,12 +47,14 @@ public class FormHandlerServlet extends HttpServlet {
         String age = request.getParameter("age");
         String city = request.getParameter("city");
         String state = request.getParameter("state");
-        Integer numberOfFamilyMemebers = Integer.valueOf(request.getParameter("numberOfFamilyMemebers"));
+        String numberOfFamilyMemebers = request.getParameter("numberOfFamilyMemebers");
 
 
-        // Print the value so you can see it in the server logs.
-        serverLog(name, age, city, state, numberOfFamilyMemebers);
+        if (DEBUGGING) 
+            serverLog(name, age, city, state, numberOfFamilyMemebers);
+        
+        checkIfValid(name, age, city, state, numberOfFamilyMemebers);
 
-        response.sendRedirect("/form.html");
+        response.sendRedirect("/shelters.html");
     }
 }
