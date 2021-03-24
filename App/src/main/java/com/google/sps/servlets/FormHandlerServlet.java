@@ -65,16 +65,31 @@ public class FormHandlerServlet extends HttpServlet {
         // Get the value entered in the form and checks if non string data are valid
         String name = request.getParameter("name");
         String gender = request.getParameter("gender");
-        Integer age = Integer.valueOf(request.getParameter("age"));
-        Boolean medicalAssistance = Boolean.valueOf(request.getParameter("medicalAssistance"));
-        Integer numberOfFamilyMembers = Integer.valueOf(request.getParameter("numberOfFamilyMembers"));
-        Boolean disabilities = Boolean.valueOf(request.getParameter("disabilities"));
+        Integer age = null;
+        Boolean medicalAssistance = null;
+        Integer numberOfFamilyMembers = null;
+        Boolean disabilities = null;
 
-        if (DEBUGGING) 
-            serverLog(name, gender, age, medicalAssistance, numberOfFamilyMembers, disabilities);
-        
-        dataIsValid = checkIfValid(name, gender, age, medicalAssistance, 
-            numberOfFamilyMembers, disabilities);
+        // tries to set the non string variables to user input
+        // covers if user mismatches types in their input
+        try {
+            age = Integer.valueOf(request.getParameter("age"));
+            medicalAssistance = Boolean.valueOf(request.getParameter("medicalAssistance"));
+            numberOfFamilyMembers = Integer.valueOf(request.getParameter("numberOfFamilyMembers"));
+            disabilities = Boolean.valueOf(request.getParameter("disabilities"));
+        } catch (Exception e) {
+            System.out.println("Wrong data format");
+            dataIsValid = false;
+        }
+
+        // does another check if User input is correct
+        if (dataIsValid) {
+            if (DEBUGGING) 
+                serverLog(name, gender, age, medicalAssistance, numberOfFamilyMembers, disabilities);
+            
+            dataIsValid = checkIfValid(name, gender, age, medicalAssistance, 
+                numberOfFamilyMembers, disabilities);
+        }
 
         // this is where the User object would be instantiated and the String types converted
 
