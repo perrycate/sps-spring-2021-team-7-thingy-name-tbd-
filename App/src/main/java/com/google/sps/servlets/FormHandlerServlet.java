@@ -13,7 +13,7 @@ public class FormHandlerServlet extends HttpServlet {
 
     private void serverLog(
         String name, String gender, Integer age, Boolean medicalAssistance, Integer numberOfFamilyMembers, 
-        Boolean disabilities
+        Boolean disabilities, Integer days
     ) {
         System.out.println("------------------------");
         System.out.println("Name: " + name);
@@ -22,12 +22,13 @@ public class FormHandlerServlet extends HttpServlet {
         System.out.println("# Family members: " + numberOfFamilyMembers);
         System.out.println("Disabilities: " + disabilities);
         System.out.println("Medical Assistance: " + medicalAssistance);
+        System.out.println("Days: " + days);
         System.out.println("------------------------");
     }
 
     private boolean checkIfValid(
         String name, String gender, Integer age, Boolean medicalAssistance, Integer numberOfFamilyMembers, 
-        Boolean disabilities
+        Boolean disabilities, Integer days
     ) {
         if (name == null || name.length() < 2) {
             System.out.println("Name is too short");
@@ -54,6 +55,10 @@ public class FormHandlerServlet extends HttpServlet {
             System.out.println("Disabilities not selected");
             return false;
         }
+        if (days == null || days < 1 || days > 365) {
+            System.out.println("Days out of range");
+            return false;
+        }
 
         return true;
     }
@@ -69,6 +74,7 @@ public class FormHandlerServlet extends HttpServlet {
         Boolean medicalAssistance = null;
         Integer numberOfFamilyMembers = null;
         Boolean disabilities = null;
+        Integer days = null;
 
         // tries to set the non string variables to user input
         // covers if user mismatches types in their input
@@ -77,6 +83,7 @@ public class FormHandlerServlet extends HttpServlet {
             medicalAssistance = Boolean.valueOf(request.getParameter("medicalAssistance"));
             numberOfFamilyMembers = Integer.valueOf(request.getParameter("numberOfFamilyMembers"));
             disabilities = Boolean.valueOf(request.getParameter("disabilities"));
+            days = Integer.valueOf(request.getParameter("days"));
         } catch (Exception e) {
             System.out.println("Wrong data format");
             dataIsValid = false;
@@ -85,10 +92,11 @@ public class FormHandlerServlet extends HttpServlet {
         // does another check if User input is correct
         if (dataIsValid) {
             if (DEBUGGING) 
-                serverLog(name, gender, age, medicalAssistance, numberOfFamilyMembers, disabilities);
+                serverLog(name, gender, age, medicalAssistance, numberOfFamilyMembers, 
+                    disabilities, days);
             
             dataIsValid = checkIfValid(name, gender, age, medicalAssistance, 
-                numberOfFamilyMembers, disabilities);
+                numberOfFamilyMembers, disabilities, days);
         }
 
         // this is where the User object would be instantiated and the String types converted
