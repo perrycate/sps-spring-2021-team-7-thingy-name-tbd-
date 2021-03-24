@@ -35,31 +35,40 @@
             </div>
 
             <div class="form__input">
+                <p>Gender</p>
+                <div class="radio-inputs">
+                    <div><input type="radio" name="gender" value="male" required="required">Male</div>
+                    <div><input type="radio" name="gender" value="female" required="required">Female</div>
+                    <div><input type="radio" name="gender" value="other" required="required">Other</div>
+                </div>
+            </div>
+            
+            <div class="form__input">
                 <p>Age</p>
                 <input type="text" name="age" required="required">
             </div>
 
-            <div class="form__input">
-                <p>City</p>
-                <input type="text" name="state" required="required">
-            </div>
 
             <div class="form__input">
-                <p>State</p>
-                <input type="text" name="state" required="required">
-            </div>
-
-            <div class="form__input">
-                <p>Disabilities</p>
-                <div id="radio-inputs">
-                    <div><input type="radio" name="disabilities" required="required"> Yes</div>
-                    <div><input type="radio" name="disabilities" required="required"> No</div>
+                <p>Do You Need Medical Assistance</p>
+                <div class="radio-inputs">
+                    <div><input type="radio" name="medicalAssistance" value="true" required="required"> Yes</div>
+                    <div><input type="radio" name="medicalAssistance" value="false" required="required"> No</div>
                 </div>
             </div>
 
+            
             <div class="form__input">
                 <p>Number of Family Members</p>
-                <input type="text" name="numberOfFamilyMemebers" required="required">
+                <input type="text" name="numberOfFamilyMembers" required="required">
+            </div>
+            
+            <div class="form__input">
+                <p>Disabilities</p>
+                <div class="radio-inputs">
+                    <div><input type="radio" name="disabilities" value="true" required="required"> Yes</div>
+                    <div><input type="radio" name="disabilities" value="false" required="required"> No</div>
+                </div>
             </div>
 
             <div id="submit-btn-wrapper">

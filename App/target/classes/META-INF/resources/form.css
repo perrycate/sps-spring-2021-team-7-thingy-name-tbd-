@@ -37,14 +37,14 @@ main {
   background-color: var(--bg-primary);
 }
 
-#radio-inputs {
+.radio-inputs {
   display: flex;
   width: 50%;
   justify-content: space-around;
   align-items: center;
 }
 
-#radio-inputs div {
+.radio-inputs div {
   width: 100px;
   display: flex;
   justify-content: space-around;
@@ -93,7 +93,7 @@ form {
     width: 100%;
   }
 
-  #radio-inputs {
+  .radio-inputs {
     margin-top: 10px;
   }
 }
