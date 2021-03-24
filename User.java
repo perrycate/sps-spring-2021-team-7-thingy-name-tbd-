@@ -8,69 +8,68 @@ public class User {
      * information of the user
      * 
 	 * */
-	private String name;
-	private int age;
-	private String city;
-	private String state;
-	private String disabilities;
-    private int numOfFamMembers;
+	private String Name;
+	private int Age;
+    private boolean disabilities;
+    private boolean needMedAssist;
+    private int NumberOfFamilyMembers;
+    private int shelterNeedLength;
     private static final int ADULT_AGE = 18;
-	public User(String name, int age, String city, String state, String disabilities, int numOfFamMembers) {
-		this.name = name;
-		this.age = age;
-		this.city = city;
-		this.state = state;
-		this.disabilities = disabilities;
-		this.numOfFamMembers = numOfFamMembers;
+	public User(String name, int age, boolean disabilities, boolean needMedAssist, int numOfFamMembers, int shelterNeedLength) {
+		this.Name = name;
+		this.Age = age;
+        this.disabilities = disabilities;
+        this.needMedAssist = needMedAssist;
+        this.NumberOfFamilyMembers = numOfFamMembers;
+        this.shelterNeedLength = shelterNeedLength;
 	}
 	public User() {
-		this.name = "Left Blank";
-		this.age = 18;
-		this.city = "Left Blank";
-		this.state = "Left Blank";
-		this.disabilities = "Left Blank";
-		this.numOfFamMembers = 0;
+		this.Name = "Left Blank";
+		this.Age = 18;
+        this.disabilities = false;
+        this.needMedAssist = false;
+		this.NumberOfFamilyMembers = 0;
     }
     public void setName(String str){
-        name = str;
+        Name = str;
     }
     public String getName(){
-        return name;
+        return Name;
     }
 	public void setAge(int num) {
-		age = num;
+		Age = num;
     }
     public int getAge(){
-        return age;
+        return Age;
     }
-    public void setCity(String str){
-        city = str;
-    }
-    public String getCity(){
-        return city;
-    }
-    public void setState(String str){
-        state = str;
-    }
-    public String getState(){
-        return state;
-    }
-    public void setDisabilities(String str){
+    public void setDisabilities(boolean str){
         disabilities = str;
     }
-    public String getDisabilities(){
+    public boolean getDisabilities(){
         return disabilities;
     }
     public void setNumFamilyMembers(int num){
-        numOfFamMembers = num;
+        NumberOfFamilyMembers = num;
     }
     public int getNumFam(){
-        return numOfFamMembers;
+        return NumberOfFamilyMembers;
     }
     public boolean isAdult(){
-        return age>=ADULT_AGE;
+        return Age>=ADULT_AGE;
     }
     public boolean haveFamMembers(){
-        return numOfFamMembers>0;
+        return NumberOfFamilyMembers>0;
+    }
+    public void setMedAssist(boolean m){
+        needMedAssist = m;
+    }
+    public boolean getMedAssist(){
+        return needMedAssist;
+    }
+    public void setShelterNeedLength(int shel){
+        shelterNeedLength = shel;
+    }
+    public int getShelterNeedLength(){
+        return shelterNeedLength;
     }
 }
