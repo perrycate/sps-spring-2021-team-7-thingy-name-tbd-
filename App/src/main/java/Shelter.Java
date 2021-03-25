@@ -55,3 +55,41 @@ and some validation logic for verifying phone numbers
         return desciption;
     }
 }
+public class Driver{
+    public static void main(String[] args){
+        Shelter nameOne = new Shelter();
+        nameOne.setName();
+        nameOne.setLocation();
+        nameOne.setPhoneNum();
+        nameOne.setDescription();
+        nameOne.setAge();
+
+        Shelter nameTwo = new Shelter();
+        nameTwo.setName();
+        nameTwo.setLocation();
+        nameTwo.setPhoneNum();
+        nameTwo.setDescription();
+        nameTwo.setAge();
+
+        Shelter nameThree = new Shelter();
+        nameThree.setName();
+        nameThree.setLocation();
+        nameThree.setPhoneNum();
+        nameThree.setDescription();
+        nameThree.setAge();
+
+        Shelter nameFour = new Shelter();
+        nameFour.setName();
+        nameFour.setLocation();
+        nameFour.setPhoneNum();
+        nameFour.setDescription();
+        nameFour.setAge();
+
+        Shelter nameFive = new Shelter();
+        nameFive.setName();
+        nameFive.setLocation();
+        nameFive.setPhoneNum();
+        nameFive.setDescription();
+        nameFive.setAge();
+    }
+}
