@@ -5,18 +5,21 @@ and some validation logic for verifying phone numbers
     private String name;
     private String location;
     private int phoneNum;
+    private int Age;
     private String desciption;
-    public Shelter(String name, String location, int phoneNum, String description){
+    public Shelter(String name, String location, int phoneNum, String description, int age){
         this.name = name;
         this.location = location;
         this.phoneNum = phoneNum;
         this.description = "Currently blank";
+        this.age = age;
     }
     public Shelter(){
         this.name = "Currently blank";
         this.location = "Currently blank";
         this.phoneNum = null;
         this.description = "Currently blank";
+        this.age = 18;
     }
     public void setName(String str){
         name = str;
