@@ -9,13 +9,13 @@ public class User {
      * 
 	 * */
 	private String Name;
-	private int Age;
-    private boolean disabilities;
-    private boolean needMedAssist;
-    private int NumberOfFamilyMembers;
-    private int shelterNeedLength;
+	private Integer Age;
+    private Boolean disabilities;
+    private Boolean needMedAssist;
+    private Integer NumberOfFamilyMembers;
+    private Integer shelterNeedLength;
     private static final int ADULT_AGE = 18;
-	public User(String name, int age, boolean disabilities, boolean needMedAssist, int numOfFamMembers, int shelterNeedLength) {
+	public User(String name, Integer age, Boolean disabilities, Boolean needMedAssist, Integer numOfFamMembers, Integer shelterNeedLength) {
 		this.Name = name;
 		this.Age = age;
         this.disabilities = disabilities;
@@ -36,40 +36,40 @@ public class User {
     public String getName(){
         return Name;
     }
-	public void setAge(int num) {
+	public void setAge(Integer num) {
 		Age = num;
     }
-    public int getAge(){
+    public Integer getAge(){
         return Age;
     }
-    public void setDisabilities(boolean str){
+    public void setDisabilities(Boolean str){
         disabilities = str;
     }
-    public boolean getDisabilities(){
+    public Boolean getDisabilities(){
         return disabilities;
     }
-    public void setNumFamilyMembers(int num){
+    public void setNumFamilyMembers(Integer num){
         NumberOfFamilyMembers = num;
     }
-    public int getNumFam(){
+    public Integer getNumFam(){
         return NumberOfFamilyMembers;
     }
-    public boolean isAdult(){
+    public Boolean isAdult(){
         return Age>=ADULT_AGE;
     }
-    public boolean haveFamMembers(){
+    public Boolean haveFamMembers(){
         return NumberOfFamilyMembers>0;
     }
-    public void setMedAssist(boolean m){
+    public void setMedAssist(Boolean m){
         needMedAssist = m;
     }
-    public boolean getMedAssist(){
+    public Boolean getMedAssist(){
         return needMedAssist;
     }
-    public void setShelterNeedLength(int shel){
+    public void setShelterNeedLength(Integer shel){
         shelterNeedLength = shel;
     }
-    public int getShelterNeedLength(){
+    public Integer getShelterNeedLength(){
         return shelterNeedLength;
     }
 }
