@@ -17,7 +17,7 @@ public class ShelterMatch extends Shelter{
         Shelter[] top3 = new Shelter[3];
         //comparing each shelter age requirement with the user
         for(int i = 0; i < list.size(); i++){
-            if(person.getAge() >= list.get(i).getAgeRequirement()){
+            if(person.getAge() >= list.get(i).getAgeRange()[0] && person.getAge() <= list.get(i).getAgeRange()[1]){
                 list.get(i).addScore();
             }
             //comparing shelters among each other to get the top 3
