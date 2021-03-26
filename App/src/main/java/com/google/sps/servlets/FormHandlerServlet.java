@@ -48,8 +48,6 @@ public class FormHandlerServlet extends HttpServlet {
             dataIsValid = user.isValid();
         }
 
-        // this is where the User object would be instantiated and the String types converted
-
         if (dataIsValid)
             response.sendRedirect("/shelters.html");
         else
