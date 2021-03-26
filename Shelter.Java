@@ -5,8 +5,9 @@ and some validation logic for verifying phone numbers
     private String name;
     private String location;
     private int phoneNum;
-    private int Age;
-    private String desciption;
+    private int age;
+    private String description;
+    private static int matchScore = 0;
     public Shelter(String name, String location, int phoneNum, String description, int age){
         this.name = name;
         this.location = location;
@@ -53,5 +54,14 @@ and some validation logic for verifying phone numbers
     }
     public String getDescription(){
         return desciption;
+    }
+    public int getAgeRequirement(){
+    	return ageRequire;
+    }    
+    public void addScore(){
+    	this.matchScore++;
+    }
+    public int getScore(){
+    	return this.matchScore;
     }
 }
