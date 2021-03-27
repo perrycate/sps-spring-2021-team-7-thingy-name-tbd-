@@ -4,10 +4,10 @@ and some validation logic for verifying phone numbers
 */
     private String name;
     private String location;
-    private int phoneNum;
+    private long phoneNum;
     private int Age;
     private String desciption;
-    public Shelter(String name, String location, int phoneNum, String description, int age){
+    public Shelter(String name, String location, long phoneNum, String description, int age){
         this.name = name;
         this.location = location;
         this.phoneNum = phoneNum;
@@ -33,14 +33,14 @@ and some validation logic for verifying phone numbers
     public String getLocation(){
         return location;
     }
-    public void setPhoneNum(int num){
+    public void setPhoneNum(long num){
         phoneNum = num;
     }
-    public int getPhoneNum(){
+    public long getPhoneNum(){
         return phoneNum;
     }
-    public boolean isValidPhoneNum(int phone){
-        int num = phone;
+    public boolean isValidPhoneNum(long phone){
+        long num = phone;
         int cnt = 9;
         while(num>1){//Checks to make sure the num given is 9 digits
             num/=10;
