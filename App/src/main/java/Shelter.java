@@ -5,22 +5,25 @@ and some validation logic for verifying phone numbers
     private String name;
     private String location;
     private int phoneNum;
-    private int age;
+    private int ageMin;
+    private int ageMax;
     private String description;
     private static int matchScore = 0;
-    public Shelter(String name, String location, int phoneNum, String description, int age){
+    public Shelter(String name, String location, int phoneNum, String description, int ageMin, int ageMax){
         this.name = name;
         this.location = location;
         this.phoneNum = phoneNum;
         this.description = "Currently blank";
-        this.age = age;
+        this.ageMin = ageMin;
+        this.ageMax = ageMax;
     }
     public Shelter(){
         this.name = "Currently blank";
         this.location = "Currently blank";
-        this.phoneNum = null;
+        this.phoneNum = 0;
         this.description = "Currently blank";
-        this.age = 18;
+        this.ageMin = 18;
+        this.ageMax = 100;
     }
     public void setName(String str){
         name = str;
@@ -50,13 +53,18 @@ and some validation logic for verifying phone numbers
         return cnt==0;
     }
     public void setDescription(String str){
-        desciption = str;
+        description = str;
     }
     public String getDescription(){
-        return desciption;
+        return description;
     }
-    public int getAgeRequirement(){
-    	return ageRequire;
+    public int[] getAgeRange(){
+        int[] ageRange = {ageMin, ageMax};
+        return ageRange;
+    } 
+    public void setAgeRange(int min, int max){
+        this.ageMin = min;
+        this.ageMax = max;
     }    
     public void addScore(){
     	this.matchScore++;
