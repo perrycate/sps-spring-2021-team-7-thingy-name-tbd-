@@ -58,38 +58,38 @@ and some validation logic for verifying phone numbers
 public class Driver{
     public static void main(String[] args){
         Shelter nameOne = new Shelter();
-        nameOne.setName();
-        nameOne.setLocation();
-        nameOne.setPhoneNum();
-        nameOne.setDescription();
-        nameOne.setAge();
+        nameOne.setName(" ");
+        nameOne.setLocation(" ");
+        nameOne.setPhoneNum(0);
+        nameOne.setDescription(" ");
+        nameOne.setAge(18);
 
         Shelter nameTwo = new Shelter();
-        nameTwo.setName();
-        nameTwo.setLocation();
-        nameTwo.setPhoneNum();
-        nameTwo.setDescription();
-        nameTwo.setAge();
+        nameOne.setName(" ");
+        nameOne.setLocation(" ");
+        nameOne.setPhoneNum(0);
+        nameOne.setDescription(" ");
+        nameOne.setAge(18);
 
         Shelter nameThree = new Shelter();
-        nameThree.setName();
-        nameThree.setLocation();
-        nameThree.setPhoneNum();
-        nameThree.setDescription();
-        nameThree.setAge();
+        nameOne.setName(" ");
+        nameOne.setLocation(" ");
+        nameOne.setPhoneNum(0);
+        nameOne.setDescription(" ");
+        nameOne.setAge(18);
 
         Shelter nameFour = new Shelter();
-        nameFour.setName();
-        nameFour.setLocation();
-        nameFour.setPhoneNum();
-        nameFour.setDescription();
-        nameFour.setAge();
+        nameOne.setName(" ");
+        nameOne.setLocation(" ");
+        nameOne.setPhoneNum(0);
+        nameOne.setDescription(" ");
+        nameOne.setAge(18);
 
         Shelter nameFive = new Shelter();
-        nameFive.setName();
-        nameFive.setLocation();
-        nameFive.setPhoneNum();
-        nameFive.setDescription();
-        nameFive.setAge();
+        nameOne.setName(" ");
+        nameOne.setLocation(" ");
+        nameOne.setPhoneNum(0);
+        nameOne.setDescription(" ");
+        nameOne.setAge(18);
     }
 }
