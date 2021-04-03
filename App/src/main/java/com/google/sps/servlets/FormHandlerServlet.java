@@ -1,6 +1,9 @@
 package com.google.sps.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -50,6 +53,9 @@ public class FormHandlerServlet extends HttpServlet {
 
         if (dataIsValid) {
             String parameters = "?a=1";
+            List<Shelter> shelters = new ArrayList<Shelter>();
+            PopulateShelters.populate(shelters);
+
             response.sendRedirect("/shelters.html" + parameters);
         }
         else {
