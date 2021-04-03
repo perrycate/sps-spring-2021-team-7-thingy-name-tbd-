@@ -48,9 +48,12 @@ public class FormHandlerServlet extends HttpServlet {
             dataIsValid = user.isValid();
         }
 
-        if (dataIsValid)
-            response.sendRedirect("/shelters.html");
-        else
+        if (dataIsValid) {
+            String parameters = "?a=1";
+            response.sendRedirect("/shelters.html" + parameters);
+        }
+        else {
             response.sendRedirect("/form.html");
+        }
     }
 }

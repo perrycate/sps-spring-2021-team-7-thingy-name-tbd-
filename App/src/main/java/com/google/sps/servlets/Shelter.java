@@ -1,3 +1,5 @@
+package com.google.sps.servlets;
+
 public class Shelter{
 /*The shelter class contains contact information for homeless shelters, 
 and some validation logic for verifying phone numbers
