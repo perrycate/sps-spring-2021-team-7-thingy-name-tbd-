@@ -4,9 +4,10 @@ and some validation logic for verifying phone numbers
 */
     private String name;
     private String location;
-    private int phoneNum;
+    private long phoneNum;
     private int Age;
     private String desciption;
+    private static int matchScore = 0;
     public Shelter(String name, String location, int phoneNum, String description, int age){
         this.name = name;
         this.location = location;
@@ -54,42 +55,51 @@ and some validation logic for verifying phone numbers
     public String getDescription(){
         return desciption;
     }
+    public int getAgeRequirement(){
+    	return ageRequire;
+    }    
+    public void addScore(){
+    	this.matchScore++;
+    }
+    public int getScore(){
+    	return this.matchScore;
+    }
 }
 public class Driver{
     public static void main(String[] args){
         Shelter nameOne = new Shelter();
-        nameOne.setName();
-        nameOne.setLocation();
-        nameOne.setPhoneNum();
-        nameOne.setDescription();
-        nameOne.setAge();
+        nameOne.setName("");
+        nameOne.setLocation("");
+        nameOne.setPhoneNum(0);
+        nameOne.setDescription("");
+        nameOne.setAge(0);
 
         Shelter nameTwo = new Shelter();
-        nameTwo.setName();
-        nameTwo.setLocation();
-        nameTwo.setPhoneNum();
-        nameTwo.setDescription();
-        nameTwo.setAge();
+        nameOne.setName("");
+        nameOne.setLocation("");
+        nameOne.setPhoneNum(0);
+        nameOne.setDescription("");
+        nameOne.setAge(0);
 
         Shelter nameThree = new Shelter();
-        nameThree.setName();
-        nameThree.setLocation();
-        nameThree.setPhoneNum();
-        nameThree.setDescription();
-        nameThree.setAge();
+        nameOne.setName("");
+        nameOne.setLocation("");
+        nameOne.setPhoneNum(0);
+        nameOne.setDescription("");
+        nameOne.setAge(0);
 
         Shelter nameFour = new Shelter();
-        nameFour.setName();
-        nameFour.setLocation();
-        nameFour.setPhoneNum();
-        nameFour.setDescription();
-        nameFour.setAge();
+        nameOne.setName("");
+        nameOne.setLocation("");
+        nameOne.setPhoneNum(0);
+        nameOne.setDescription("");
+        nameOne.setAge(0);
 
         Shelter nameFive = new Shelter();
-        nameFive.setName();
-        nameFive.setLocation();
-        nameFive.setPhoneNum();
-        nameFive.setDescription();
-        nameFive.setAge();
+        nameOne.setName("");
+        nameOne.setLocation("");
+        nameOne.setPhoneNum(0);
+        nameOne.setDescription("");
+        nameOne.setAge(0);
     }
 }
