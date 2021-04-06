@@ -4,12 +4,12 @@ and some validation logic for verifying phone numbers
 */
     private String name;
     private String location;
-    private int phoneNum;
+    private long phoneNum;
     private int ageMin;
     private int ageMax;
     private String description;
     private static int matchScore = 0;
-    public Shelter(String name, String location, int phoneNum, String description, int ageMin, int ageMax){
+    public Shelter(String name, String location, long phoneNum, String description, int ageMin, int ageMax){
         this.name = name;
         this.location = location;
         this.phoneNum = phoneNum;
@@ -40,7 +40,7 @@ and some validation logic for verifying phone numbers
     public void setPhoneNum(int num){
         phoneNum = num;
     }
-    public int getPhoneNum(){
+    public long getPhoneNum(){
         return phoneNum;
     }
     public boolean isValidPhoneNum(int phone){
