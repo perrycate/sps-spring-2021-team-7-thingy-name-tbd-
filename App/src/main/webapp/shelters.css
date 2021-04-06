@@ -1,14 +1,14 @@
 @import "style.css";
 
 main {
-  background-color: var(--bg-tertiary);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px 0;
+    background-color: var(--bg-tertiary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
 }
 
-#main__shelter-list {
+#main__shelter-list-wrapper {
     margin-top: 20px;
     width: 85%;
 }
@@ -49,4 +49,29 @@ main {
 
 .shelter-list__shelter__location {
     grid-column: 4 / span 1;
+}
+
+#back-btn-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+#back-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    color: var(--button-text-color);
+    background-color: var(--button-color);
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+#back-btn:hover,
+#back-btn:focus {
+    background-color: var(--button-color-focus);
 }

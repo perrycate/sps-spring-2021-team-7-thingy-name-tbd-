@@ -2,7 +2,6 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const shelters = JSON.parse(urlParams.get('shelters'));
-console.log(shelters);
 
 const shelterList = document.querySelector('#main__shelter-list');
 

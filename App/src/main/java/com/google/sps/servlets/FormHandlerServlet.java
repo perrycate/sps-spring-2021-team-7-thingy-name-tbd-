@@ -66,10 +66,7 @@ public class FormHandlerServlet extends HttpServlet {
             PopulateShelters.populate(shelters);
             
             String shelterGson = convertSheltersToJson(shelters);
-            System.out.println(shelterGson);
-
             parameters += shelterGson;
-            System.out.println(parameters);
 
             response.sendRedirect("/shelters.html" + parameters);
         }
