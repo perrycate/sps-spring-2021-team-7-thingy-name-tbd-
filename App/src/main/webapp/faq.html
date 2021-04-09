@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <script src ="script.js"></script>
+        <script src ="sum.js"></script>
+        <style>
+        body{
+          background-color: red
+        }
+            h1{
+              text-align: center;
+              color:white
+            }
+            p{
+              color:white
+            }
+
+        </style>
     </head>
     <body>
         <a href = "form.html">Go back to form</a>
-<h2>Frequently asked questions</h2>
-
-        
-        <p>What states does this website cater too?</p>
+        <a href = "index.html">Go back to main page</a>
+        <h1>Frequently asked questions</h1>
+        <button onclick = "state()">What states does this website cater too?</button>
         <p id = "state"></p>
-        <button onclick = "state()">Answer</button>
-        
 
-        <p>Do I have to be an adult to fill out this form?</p>
+        <button onclick = "adult()">Do I have to be an adult to fill out this form?</button>
         <p id = 'adult'></p>
-        <button onclick = "adult()">Answer</button>
 
-
-        <p>Do I have to be either homeless or not have stable housing to fill it out?</p>
+        <button onclick = "house()">Do I have to be either homeless or not have stable housing to fill it out?</button>
         <p id = 'housing'></p>
-        <button onclick = "house()">Answer</button>
 
-        <p>Can I fill the shelter form out again if I already found did once?</p>
+        <button onclick = "shelter()">Can I fill the shelter form out again if I already found did once?</button>
         <p id = 'shelter'></p>
-        <button onclick = "shelter()">Answer</button>
 
+        <button onclick = "covid()">Will I have to be vaccinated first?></button>
+        <p id = 'covid'></p>
     </body>
 </html>
