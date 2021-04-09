@@ -8,8 +8,39 @@
 
     <!-- Style sheets -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shelters.css">
+
 </head>
 <body>
-    <a href="form.html">Go back to form</a>
+    <nav>
+        <div id="nav__top-content">
+            <p id="logo">Logo</p>
+            <p>Placeholder</p>
+        </div>
+        <div id="nav__bottom-content">
+            <a href="#FAQ">FAQ</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>  
+    </nav>
+    <main>
+        <div id="main__title">Best Shelters For You</div>
+        <div class="#main__shelter-list-wrapper">
+            <div id="main__shelter-list">
+                <div class="shelter-list__shelter">
+                    <div class="shelter-list__shelter__name">Name</div>
+                    <div class="shelter-list__shelter__description">About</div>
+                    <div class="shelter-list__shelter__number">Number</div>
+                    <div class="shelter-list__shelter__location">Address</div>
+                </div>
+            </div>
+
+            <div id="back-btn-wrapper">
+                <a id="back-btn" href="form.html">Search Again</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="shelters.js"></script>
 </body>
 </html>

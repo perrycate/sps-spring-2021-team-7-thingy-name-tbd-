@@ -1,3 +1,5 @@
+package com.google.sps.servlets;
+
 import java.util.ArrayList;
 
 public class ShelterMatch extends Shelter{
