@@ -15,10 +15,12 @@ public class User {
     private Boolean needMedAssist;
     private Integer NumberOfFamilyMembers;
     private Integer shelterNeedLength;
+    private String gender;
     private static final int ADULT_AGE = 18;
-	public User(String name, Integer age, Boolean disabilities, Boolean needMedAssist, Integer numOfFamMembers, Integer shelterNeedLength) {
+	public User(String name, Integer age, String gender,Boolean disabilities, Boolean needMedAssist, Integer numOfFamMembers, Integer shelterNeedLength) {
 		this.Name = name;
-		this.Age = age;
+        this.Age = age;
+        this.gender = gender;
         this.disabilities = disabilities;
         this.needMedAssist = needMedAssist;
         this.NumberOfFamilyMembers = numOfFamMembers;
@@ -26,10 +28,12 @@ public class User {
 	}
 	public User() {
 		this.Name = "Left Blank";
-		this.Age = 18;
+        this.Age = 18;
+        this.gender = "other";
         this.disabilities = false;
         this.needMedAssist = false;
-		this.NumberOfFamilyMembers = 0;
+        this.NumberOfFamilyMembers = 0;
+        this.shelterNeedLength = 0;
     }
     public void setName(String str){
         Name = str;

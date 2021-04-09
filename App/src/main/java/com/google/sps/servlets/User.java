@@ -31,7 +31,8 @@ public class User {
 	}
 	public User() {
 		this.Name = "Left Blank";
-		this.Age = 18;
+        this.Age = 18;
+        this.Gender = "other";
         this.disabilities = false;
         this.needMedAssist = false;
 		this.NumberOfFamilyMembers = 0;

@@ -1,8 +1,7 @@
 package com.google.sps.servlets;
 
 public class ShelterDriver{
-    public static void main(String[] args){
-        Shelter nameOne = new Shelter();
+        /*Shelter nameOne = new Shelter();
         nameOne.setName("Youth Emerging Stronger: Runaway & Homeless Minor Youth Program");
         nameOne.setLocation("1754 Taft Avenue, Los Angeles , CA 90028");
         nameOne.setPhoneNum(0);
@@ -36,5 +35,6 @@ public class ShelterDriver{
         nameFive.setPhoneNum(0);
         nameFive.setDescription("9-18 month program for veterans with mental health issues");
         nameFive.setAgeRange(18,100);
+        */
     }
 }

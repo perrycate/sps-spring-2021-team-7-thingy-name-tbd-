@@ -17,7 +17,7 @@ public class FormHandlerServlet extends HttpServlet {
     private static final boolean DEBUGGING = true;
 
     // converts shelters to Json using Gson and returns it as a string
-    private String convertSheltersToJson(List<Shelter> shelters) {
+    private String convertSheltersToJson(Shelter[] shelters) {
         Gson gson = new Gson();
         String json = gson.toJson(shelters);
         return json;
@@ -62,10 +62,15 @@ public class FormHandlerServlet extends HttpServlet {
 
         if (dataIsValid) {
             String parameters = "?shelters=";
-            List<Shelter> shelters = new ArrayList<Shelter>();
-            PopulateShelters.populate(shelters);
             
-            String shelterGson = convertSheltersToJson(shelters);
+            /*List<Shelter> shelters = new ArrayList<Shelter>();
+            PopulateShelters.populate(shelters);
+            */
+
+            User n = new User();
+            ShelterMatch matcher = new ShelterMatch();
+            matcher.addShelters();
+            String shelterGson = convertSheltersToJson(ShelterMatch.isEligible(n));
             parameters += shelterGson;
 
             response.sendRedirect("/shelters.html" + parameters);

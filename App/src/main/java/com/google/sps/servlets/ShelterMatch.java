@@ -2,12 +2,15 @@ package com.google.sps.servlets;
 
 import java.util.ArrayList;
 
-public class ShelterMatch extends Shelter{
+public class ShelterMatch{
     
-    private ArrayList<Shelter> list;
+    private static ArrayList<Shelter> list;
 
     public ShelterMatch(){
-        list = new ArrayList<Shelter>();
+        list = new ArrayList<Shelter>();        
+    }
+
+    public void addShelters(){
         Shelter nameOne = new Shelter();
         nameOne.setName("Youth Emerging Stronger: Runaway & Homeless Minor Youth Program");
         nameOne.setLocation("1754 Taft Avenue, Los Angeles , CA 90028");
@@ -49,26 +52,29 @@ public class ShelterMatch extends Shelter{
         list.add(nameFive);
     }
 
-    /* 
-    public void addShelter(Shelter s){
-        list.add(s);
-    }
-    */    
-
     //returns an array of the top 3 shelters matched with the user
-    public Shelter[] isEligible(User person){
+    public static Shelter[] isEligible(User person){
         Shelter[] top3 = new Shelter[3];
         //comparing each shelter age requirement with the user
+        System.out.println(person.getName() + person.getAge());
+        System.out.println(list + "IS THIS WORKINGGGG");
         for(int i = 0; i < list.size(); i++){
             if(person.getAge() >= list.get(i).getAgeRange()[0] && person.getAge() <= list.get(i).getAgeRange()[1]){
                 list.get(i).addScore();
             }
-            //comparing shelters among each other to get the top 3
+            /*comparing shelters among each other to get the top 3
             for(int j = 0; j < top3.length; j++){
             	if(list.get(i).getScore() > top3[j].getScore())
             		top3[j] = list.get(i);
-            }
+            }*/
         }
         return top3;
+    }
+    public static void main(String[] args){
+        
+        Integer a = 18;
+        Boolean b = false;
+        User test = new User("Test", a, "female", b,b,a,a);
+        System.out.println(isEligible(test));
     }
 }
