@@ -67,10 +67,10 @@ public class FormHandlerServlet extends HttpServlet {
             PopulateShelters.populate(shelters);
             */
 
-            User n = new User();
+            //User n = new User();
             ShelterMatch matcher = new ShelterMatch();
             matcher.addShelters();
-            String shelterGson = convertSheltersToJson(ShelterMatch.isEligible(n));
+            String shelterGson = convertSheltersToJson(ShelterMatch.isEligible(user));
             parameters += shelterGson;
 
             response.sendRedirect("/shelters.html" + parameters);

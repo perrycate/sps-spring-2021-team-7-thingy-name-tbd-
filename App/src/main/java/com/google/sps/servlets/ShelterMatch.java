@@ -32,7 +32,7 @@ public class ShelterMatch{
         nameThree.setLocation("3006 S. Vermont Ave. Los Angeles, CA 90007");
         nameThree.setPhoneNum(3237616415L);
         nameThree.setDescription("Homeless service for men ony.");
-        nameThree.setAgeRange(12,17);
+        nameThree.setAgeRange(18,65);
         list.add(nameThree);
 
         Shelter nameFour = new Shelter();
@@ -52,22 +52,31 @@ public class ShelterMatch{
         list.add(nameFive);
     }
 
+    public static void sortShelters(Shelter[] shelters){
+        for(int i = 0; i < shelters.length; i++){
+
+        }
+
+    }
     //returns an array of the top 3 shelters matched with the user
     public static Shelter[] isEligible(User person){
         Shelter[] top3 = new Shelter[3];
-        //comparing each shelter age requirement with the user
-        System.out.println(person.getName() + person.getAge());
-        System.out.println(list + "IS THIS WORKINGGGG");
+
+        //comparing each shelter age requirement with the user        
         for(int i = 0; i < list.size(); i++){
             if(person.getAge() >= list.get(i).getAgeRange()[0] && person.getAge() <= list.get(i).getAgeRange()[1]){
                 list.get(i).addScore();
             }
-            /*comparing shelters among each other to get the top 3
-            for(int j = 0; j < top3.length; j++){
-            	if(list.get(i).getScore() > top3[j].getScore())
-            		top3[j] = list.get(i);
-            }*/
         }
+        //comparing shelters among each other to get the top 3
+        for(int i = 0; i < top3.length; i++){
+            if(list.get(i).getScore() > 0)
+                top3[i] = list.get(i);
+        }
+
+
+        for(int i = 0; i < top3.length; i++)
+            System.out.println(top3[i] + "\n");
         return top3;
     }
     public static void main(String[] args){
