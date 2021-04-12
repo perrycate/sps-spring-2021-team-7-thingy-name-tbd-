@@ -10,7 +10,7 @@ and some validation logic for verifying phone numbers
     private int ageMin;
     private int ageMax;
     private String description;
-    private static int matchScore = 0;
+    private int matchScore = 0;
     public Shelter(String name, String location, long phoneNum, String description, int ageMin, int ageMax){
         this.name = name;
         this.location = location;

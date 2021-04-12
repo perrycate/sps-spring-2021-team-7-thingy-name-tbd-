@@ -52,38 +52,56 @@ public class ShelterMatch{
         list.add(nameFive);
     }
 
-    public static void sortShelters(Shelter[] shelters){
-        for(int i = 0; i < shelters.length; i++){
+    //returns a Shelter[] of the sorted results based on score
+    public static Shelter[] sortTop3(){
+        Shelter[] output = new Shelter[3];
+        ArrayList<Shelter> temp = new ArrayList<Shelter>();
 
+        //populating temp with Shelters from list so temp can be altered without effecting list
+        for(int i = 0; i < list.size(); i++){
+            temp.add(list.get(i));
+        }
+        
+        int count = 0;
+        while(count <= output.length-1){
+            int posMax = 0;
+            int maxScore = temp.get(0).getScore();
+
+            for(int j = 0; j < temp.size(); j++){
+                if(maxScore < temp.get(j).getScore()){
+                    maxScore = temp.get(j).getScore();
+                    posMax = j;
+                }
+                else if(maxScore == temp.get(j).getScore()){
+                    maxScore = maxScore;
+                }
+            }
+            
+            output[count] = temp.get(posMax);
+            temp.remove(posMax);
+            count++;
         }
 
+        //checking to see if any shelters with score of 0 was added to top3
+        for(int i = 0; i < output.length; i++){
+            if(output[i].getScore() == 0)
+                output[i] = new Shelter("No other available shelters",null,0L,null,0,0);
+        }
+        return output;
     }
+
     //returns an array of the top 3 shelters matched with the user
     public static Shelter[] isEligible(User person){
         Shelter[] top3 = new Shelter[3];
-
+        
         //comparing each shelter age requirement with the user        
         for(int i = 0; i < list.size(); i++){
             if(person.getAge() >= list.get(i).getAgeRange()[0] && person.getAge() <= list.get(i).getAgeRange()[1]){
                 list.get(i).addScore();
             }
         }
-        //comparing shelters among each other to get the top 3
-        for(int i = 0; i < top3.length; i++){
-            if(list.get(i).getScore() > 0)
-                top3[i] = list.get(i);
-        }
+        top3 = sortTop3();
 
-
-        for(int i = 0; i < top3.length; i++)
-            System.out.println(top3[i] + "\n");
         return top3;
-    }
-    public static void main(String[] args){
-        
-        Integer a = 18;
-        Boolean b = false;
-        User test = new User("Test", a, "female", b,b,a,a);
-        System.out.println(isEligible(test));
     }
 }
