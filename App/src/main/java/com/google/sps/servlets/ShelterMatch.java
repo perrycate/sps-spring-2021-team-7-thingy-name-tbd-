@@ -17,6 +17,7 @@ public class ShelterMatch{
         nameOne.setPhoneNum(3232402253L);
         nameOne.setDescription("90 day program for teens.");
         nameOne.setAgeRange(12,17);
+        nameOne.setDisability(false);
         list.add(nameOne);
 
         Shelter nameTwo = new Shelter();
@@ -25,6 +26,7 @@ public class ShelterMatch{
         nameTwo.setPhoneNum(3232402253L);
         nameTwo.setDescription("18-24 month program for teens");
         nameTwo.setAgeRange(18,24);
+        nameTwo.setDisability(false);
         list.add(nameTwo);
 
         Shelter nameThree = new Shelter();
@@ -33,6 +35,7 @@ public class ShelterMatch{
         nameThree.setPhoneNum(3237616415L);
         nameThree.setDescription("Homeless service for men ony.");
         nameThree.setAgeRange(18,65);
+        nameThree.setGender("male");
         list.add(nameThree);
 
         Shelter nameFour = new Shelter();
@@ -41,6 +44,7 @@ public class ShelterMatch{
         nameFour.setPhoneNum(3236442200L);
         nameFour.setDescription("6 month program for people with verified disabilities.");
         nameFour.setAgeRange(18,100);
+        nameFour.setDisability(false);
         list.add(nameFour);
 
         Shelter nameFive = new Shelter();
@@ -85,9 +89,33 @@ public class ShelterMatch{
         //checking to see if any shelters with score of 0 was added to top3
         for(int i = 0; i < output.length; i++){
             if(output[i].getScore() == 0)
-                output[i] = new Shelter("No other available shelters",null,0L,null,0,0);
+                output[i] = new Shelter("No other available shelters",null,0L,null,0,0,false);
         }
         return output;
+    }
+
+    public static boolean ageRequire(User person, int i){
+        //        
+        if(person.getAge() >= list.get(i).getAgeRange()[0] && person.getAge() <= list.get(i).getAgeRange()[1]){
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean genderRequire(User person, int i){
+        //        
+        if(person.getGender().equals(list.get(i).getGender())){
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean disability(User person, int i){
+        //        
+        if(person.getDisabilities().equals(list.get(i).getDisability())){
+            return true;
+        }
+        return false;
     }
 
     //returns an array of the top 3 shelters matched with the user
@@ -96,9 +124,12 @@ public class ShelterMatch{
         
         //comparing each shelter age requirement with the user        
         for(int i = 0; i < list.size(); i++){
-            if(person.getAge() >= list.get(i).getAgeRange()[0] && person.getAge() <= list.get(i).getAgeRange()[1]){
+            if(ageRequire(person,i))
                 list.get(i).addScore();
-            }
+            if(genderRequire(person,i))
+                list.get(i).addScore();
+            if(disability(person,i))
+                list.get(i).addScore();
         }
         top3 = sortTop3();
 

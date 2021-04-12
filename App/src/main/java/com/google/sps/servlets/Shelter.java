@@ -11,13 +11,28 @@ and some validation logic for verifying phone numbers
     private int ageMax;
     private String description;
     private int matchScore = 0;
-    public Shelter(String name, String location, long phoneNum, String description, int ageMin, int ageMax){
+    private boolean disability;
+    private String gender;
+
+    public Shelter(String name, String location, long phoneNum, String description, int ageMin, int ageMax, boolean disability){
         this.name = name;
         this.location = location;
         this.phoneNum = phoneNum;
         this.description = "Currently blank";
         this.ageMin = ageMin;
         this.ageMax = ageMax;
+        this.disability = disability;
+    }
+    //specific gender shelters
+    public Shelter(String name, String location, long phoneNum, String description, int ageMin, int ageMax, boolean disability, String gender){
+        this.name = name;
+        this.location = location;
+        this.phoneNum = phoneNum;
+        this.gender = gender;
+        this.description = "Currently blank";
+        this.ageMin = ageMin;
+        this.ageMax = ageMax;
+        this.disability = disability;
     }
     public Shelter(){
         this.name = "Currently blank";
@@ -26,6 +41,8 @@ and some validation logic for verifying phone numbers
         this.description = "Currently blank";
         this.ageMin = 18;
         this.ageMax = 100;
+        this.disability = false;
+        
     }
     public void setName(String str){
         name = str;
@@ -54,6 +71,23 @@ and some validation logic for verifying phone numbers
         }
         return cnt==0;
     }
+
+    public boolean getDisability(){
+        return disability;
+    }
+
+    public void setDisability(boolean b){
+        disability = b;
+    }
+
+    public String getGender(){
+        return gender;
+    }
+
+    public void setGender(String str){
+        gender = str;
+    }
+    
     public void setDescription(String str){
         description = str;
     }
