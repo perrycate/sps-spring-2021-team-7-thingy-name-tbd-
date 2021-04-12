@@ -53,6 +53,36 @@ public class ShelterMatch{
         nameFive.setPhoneNum(2137448186L);
         nameFive.setDescription("9-18 month program for veterans with mental health issues");
         nameFive.setAgeRange(18,100);
+        nameFour.setDisability(false);
+        list.add(nameFive);
+
+        Shelter nameSix = new Shelter();
+        nameSix.setName("Downtown Women’s Center: Permanent Supportive Housing");
+        nameSix.setLocation("442 S. San Pedro Street, Los Angeles, CA 90013");
+        nameSix.setPhoneNum(2136800600L);
+        nameSix.setDescription("Permanent program for homeless women.");
+        nameSix.setAgeRange(18,100);
+        nameSix.setGender("female");
+        nameFour.setDisability(false);
+        list.add(nameSix);
+
+        Shelter nameSeven = new Shelter();
+        nameSeven.setName("Downtown Women’s Center: Community-Based Housing Program");
+        nameSeven.setLocation("442 S. San Pedro Street, Los Angeles, CA 90013");
+        nameSeven.setPhoneNum(2136800600L);
+        nameSeven.setDescription("Nightly program for homeless women and children.");
+        nameSeven.setAgeRange(18,100);
+        nameSeven.setGender("female");
+        nameFour.setDisability(false);
+        list.add(nameSeven);
+
+        Shelter nameEight = new Shelter();
+        nameEight.setName("Higher Goals");
+        nameEight.setLocation("10510 S Vermont Ave, Los Angeles, CA - 90044");
+        nameEight.setPhoneNum(3237559702L);
+        nameEight.setDescription("6 month program to get you back on your feet.");
+        nameEight.setAgeRange(18,100);
+        nameEight.setDisability(false);
         list.add(nameFive);
     }
 
