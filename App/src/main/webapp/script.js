@@ -1,5 +1,5 @@
 function state(){
-    const state = 'Just califonia for now.';
+    const state = 'Just California for now.';
     const stateContainer = document.getElementById('state');
     stateContainer.innerText = state;
 }
