@@ -97,7 +97,7 @@ public class ShelterMatch{
         }
         
         int count = 0;
-        while(count <= output.length-1){
+        while(count < output.length){
             int posMax = 0;
             int maxScore = temp.get(0).getScore();
 
@@ -125,7 +125,6 @@ public class ShelterMatch{
     }
 
     public static boolean ageRequire(User person, int i){
-        //        
         if(person.getAge() >= list.get(i).getAgeRange()[0] && person.getAge() <= list.get(i).getAgeRange()[1]){
             return true;
         }
@@ -133,15 +132,13 @@ public class ShelterMatch{
     }
 
     public static boolean genderRequire(User person, int i){
-        //        
         if(person.getGender().equals(list.get(i).getGender())){
             return true;
         }
         return false;
     }
 
-    public static boolean disability(User person, int i){
-        //        
+    public static boolean disability(User person, int i){      
         if(person.getDisabilities().equals(list.get(i).getDisability())){
             return true;
         }

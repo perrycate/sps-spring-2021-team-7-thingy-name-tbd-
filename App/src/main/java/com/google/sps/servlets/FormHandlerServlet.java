@@ -62,12 +62,6 @@ public class FormHandlerServlet extends HttpServlet {
 
         if (dataIsValid) {
             String parameters = "?shelters=";
-            
-            /*List<Shelter> shelters = new ArrayList<Shelter>();
-            PopulateShelters.populate(shelters);
-            */
-
-            //User n = new User();
             ShelterMatch matcher = new ShelterMatch();
             matcher.addShelters();
             String shelterGson = convertSheltersToJson(ShelterMatch.isEligible(user));

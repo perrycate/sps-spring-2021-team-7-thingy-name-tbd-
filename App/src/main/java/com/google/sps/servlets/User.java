@@ -19,7 +19,7 @@ public class User {
     private Integer NumberOfFamilyMembers;
     private Integer shelterNeedLength;
     
-    public User(String name, Integer age, String gender,Boolean disabilities, Boolean needMedAssist, 
+    public User(String name, Integer age, String gender, Boolean disabilities, Boolean needMedAssist, 
                 Integer numOfFamMembers, Integer shelterNeedLength) {
 		this.Name = name;
         this.Age = age;
