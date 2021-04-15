@@ -24,7 +24,7 @@ public class ShelterMatch{
         nameTwo.setName("Youth Emerging Stronger: Transitional Living Program");
         nameTwo.setLocation("1754 Taft Avenue, Los Angeles , CA 90028");
         nameTwo.setPhoneNum(3232402253L);
-        nameTwo.setDescription("18-24 month program for teens");
+        nameTwo.setDescription("18-24 month program for young adults.");
         nameTwo.setAgeRange(18,24);
         nameTwo.setDisability(false);
         list.add(nameTwo);
@@ -52,8 +52,8 @@ public class ShelterMatch{
         nameFive.setName("Salvation Army Hope Harbor Los Angeles");
         nameFive.setLocation("3107 S. Grand Avenue, Los Angeles, CA 90007");
         nameFive.setPhoneNum(2137448186L);
-        nameFive.setDescription("9-18 month program for veterans with mental health issues");
-        nameFive.setAgeRange(18,100);
+        nameFive.setDescription("9-18 month program for those with mental health issues");
+        nameFive.setAgeRange(40,100);
         nameFour.setDisability(false);
         list.add(nameFive);
 
