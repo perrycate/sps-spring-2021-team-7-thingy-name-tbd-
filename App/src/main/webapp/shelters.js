@@ -56,7 +56,8 @@ for (let shelter of shelters) {
     location.innerHTML = shelter.location;
 
     // creates market on map.
-    geocodeAddress(geocoder, map, shelter.location);
+    if (shelter.location !== undefined)
+        geocodeAddress(geocoder, map, shelter.location);
 
     shelterContainer.appendChild(name);
     shelterContainer.appendChild(description);
