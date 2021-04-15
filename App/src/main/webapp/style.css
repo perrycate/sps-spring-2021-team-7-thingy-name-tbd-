@@ -73,32 +73,40 @@ footer {
   margin-bottom: 40px;
 }
 
-        #slider{
-            overflow: hidden;
-            z-index: 1;
-            position: relative;
-            height: 400px;
-        }
+#slider {
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    height: 400px;
+    z-index: 2;
+    position: relative;
+}
 
-        #slider figure{
-            position: relative;
-            width: 500%;
-            margin: 0;
-            left: 0;
-            animation: 20s slider infinite;
-        }
-        #slider figure img {
-            max-height: 400px;
-            min-height: 400px;
-            object-fit: cover;
-            width: 20%;
-            float: left;
-        }
-        #title{
-            z-index: 10;
-            position: relative;
-            transform: translateY(-200px);
-        }
+#slider figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slider infinite;
+    z-index: 2;
+    position: relative;
+}
+
+#slider figure img {
+    max-height: 400px;
+    min-height: 400px;
+    object-fit: cover;
+    width: 20%;
+    float: left;
+    position: relative;
+    z-index: 2;
+}
+
+#title {
+    z-index: 10;
+    position: relative;
+    transform: translateY(-200px);
+}
 
 @keyframes slider {
 	0% {
@@ -129,63 +137,80 @@ footer {
 		left: -400%;
 	}  
 }
-#btn{
+
+#btn {
     padding: 10px 30px;
-    font-size: 1.2rem;
-    color: white;
-    background-color: #a13237;
-    border: none;
-    border-radius: 10px;
+    font-size: 1rem;
     z-index: 10;
-    position: relative;
-    transform: translateY(-235px);
-    left: 500px;
-    /*right:500px;*/
-    margin: center;
-    display:flex;
-    width:175px
+    position: absolute;
+    transform: translateY(50px);
+    padding: 10px 30px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: var(--button-text-color);
+    background-color: var(--button-color);
+    transition: all 0.3s;
+    text-decoration: none;
 }
-    .wrapper{
-        display:flex;
-        flex-direction: column;
-        align-items: center;        
-        justify-content: center;
-    }
-    #title {
-        z-index: 10;
-        position: relative;
-        transform: translateY(-250px);
-        left: 280px;
-        padding: 20px 50px;
-        font-size: 50px;
-        color: white;
-        -webkit-text-stroke-width: 2px;
-        -webkit-text-stroke-color: #2b2727;
-        font-weight: bold;
-    } 
+#btn:hover,
+#btn:focus {
+    background-color: var(--button-color-focus);
+}
 
-    #info-title{
-        font-size: 40px;
-        color: var(--text-secondary);
-        font-weight: 600;
-        margin-bottom: 40px;
-        margin-left: 0px;
-    }
+.wrapper {
+    display:flex;
+    flex-direction: column;
+    align-items: center;        
+    justify-content: center;
+}
 
-    #info-p{
-        font-size: 20px;
-        color: var(--text-secondary);
-        font-weight: 600;
-        margin-bottom: 30px;
-        margin-right: 80px;
-        margin-left: 80px;
-        /*text-indent: 10%;*/
-    }
+#title {
+    z-index: 10;
+    position: absolute;
+    transform: translateY(-40px);
+    padding: 20px 50px;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+} 
 
-    #info-p2{
-        font-size: 20px;
-        color: var(--text-secondary);
-        font-weight: 600;
-        margin-bottom: 15px;
-        margin: center;
-    }
+#info-title {
+    font-size: 2rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.info-p {
+    font-size: 20px;
+    color: var(--text-secondary);
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.overlay {
+    position: relative;
+    z-index: 8;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.65);
+    width: 100%;
+    height: 100%;
+}
+
+#about-section {
+    padding-top: 50px;
+    padding: 50px;
+    background: var(--bg-primary)
+}
+
+#contact-section {
+    padding-top: 50px;
+    padding: 50px;
+    background: var(--bg-tertiary)
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+}
