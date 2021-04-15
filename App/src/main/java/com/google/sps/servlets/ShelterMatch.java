@@ -36,6 +36,7 @@ public class ShelterMatch{
         nameThree.setDescription("Homeless service for men ony.");
         nameThree.setAgeRange(18,65);
         nameThree.setGender("male");
+        nameTwo.setDisability(false);
         list.add(nameThree);
 
         Shelter nameFour = new Shelter();
@@ -44,7 +45,7 @@ public class ShelterMatch{
         nameFour.setPhoneNum(3236442200L);
         nameFour.setDescription("6 month program for people with verified disabilities.");
         nameFour.setAgeRange(18,100);
-        nameFour.setDisability(false);
+        nameFour.setDisability(true);
         list.add(nameFour);
 
         Shelter nameFive = new Shelter();
