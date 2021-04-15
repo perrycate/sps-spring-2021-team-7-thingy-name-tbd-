@@ -1,3 +1,5 @@
+package com.google.sps.servlets;
+
 public class ShelterDriver{
     public static void main(String[] args){
         Shelter nameOne = new Shelter();

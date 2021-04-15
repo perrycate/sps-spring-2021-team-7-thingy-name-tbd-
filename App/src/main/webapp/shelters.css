@@ -1,0 +1,77 @@
+@import "style.css";
+
+main {
+    background-color: var(--bg-tertiary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+}
+
+#main__shelter-list-wrapper {
+    margin-top: 20px;
+    width: 85%;
+}
+
+@media (max-width: 760px) {
+    #main__shelter-list {
+        width: 100%;
+    }
+}
+
+.division {
+    border-top: 2px solid var(--bg-primary);
+    width: 100%
+}
+
+.shelter-list__shelter {
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    width: 100%;
+    grid-gap: auto;
+    padding: 30px 0;
+    font-size: 18px;
+    color: var(--text-primary);
+    column-gap: 1%;
+}
+
+.shelter-list__shelter__name {
+    grid-column: 1 / span 1;
+}
+
+.shelter-list__shelter__description {
+    grid-column: 2 / span 1;
+}
+
+.shelter-list__shelter__number {
+    grid-column: 3 / span 1;
+}
+
+.shelter-list__shelter__location {
+    grid-column: 4 / span 1;
+}
+
+#back-btn-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+#back-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    color: var(--button-text-color);
+    background-color: var(--button-color);
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+#back-btn:hover,
+#back-btn:focus {
+    background-color: var(--button-color-focus);
+}

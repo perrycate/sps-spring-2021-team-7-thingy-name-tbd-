@@ -1,15 +1,27 @@
 package com.google.sps.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+
 @WebServlet("/form-handler")
 public class FormHandlerServlet extends HttpServlet {
     // switch to true to log data before validating 
     private static final boolean DEBUGGING = true;
+
+    // converts shelters to Json using Gson and returns it as a string
+    private String convertSheltersToJson(List<Shelter> shelters) {
+        Gson gson = new Gson();
+        String json = gson.toJson(shelters);
+        return json;
+    }
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -48,9 +60,18 @@ public class FormHandlerServlet extends HttpServlet {
             dataIsValid = user.isValid();
         }
 
-        if (dataIsValid)
-            response.sendRedirect("/shelters.html");
-        else
+        if (dataIsValid) {
+            String parameters = "?shelters=";
+            List<Shelter> shelters = new ArrayList<Shelter>();
+            PopulateShelters.populate(shelters);
+            
+            String shelterGson = convertSheltersToJson(shelters);
+            parameters += shelterGson;
+
+            response.sendRedirect("/shelters.html" + parameters);
+        }
+        else {
             response.sendRedirect("/form.html");
+        }
     }
 }

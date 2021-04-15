@@ -1,14 +1,14 @@
 
 
 public class User {
-	/*For the User class the fields needed are:
-	 * Name, age, city, state, disabilities, and
-	 * number of families.
+    /*For the User class the fields needed are:
+     * Name, age, city, state, disabilities, and
+     * number of families.
      * 
      * Class also contains multiple methods for creating and sending the
      * information of the user
      * 
-	 * */
+     * */
 	private String Name;
 	private Integer Age;
     private Boolean disabilities;

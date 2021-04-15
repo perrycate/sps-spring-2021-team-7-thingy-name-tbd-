@@ -65,3 +65,10 @@ footer {
   height: 100px;
   background-color: var(--bg-primary);
 }
+
+#main__title {
+  font-size: 26px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-bottom: 40px;
+}

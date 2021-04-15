@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 7 Project</title>
+
+    <!-- Style sheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:400,500,600,700,800&display=swap" rel="stylesheet">
+
+    <style type = "text/css">
+        #slider{
+            overflow: hidden;
+            z-index: 1;
+            position: relative;
+            height: 400px;
+        }
+
+        #slider figure{
+            position: relative;
+            width: 500%;
+            margin: 0;
+            left: 0;
+            animation: 20s slider infinite;
+        }
+        #slider figure img {
+            max-height: 400px;
+            min-height: 400px;
+            object-fit: cover;
+            width: 20%;
+            float: left;
+        }
+        #title{
+            z-index: 10;
+            position: relative;
+            transform: translateY(-200px);
+        }
+
+@keyframes slider {
+	0% {
+		left: 0;
+	}
+	20% {
+		left: 0;
+	}
+	25% {
+		left: -100%;
+	}
+	45% {
+		left: -100%;
+	}
+	50% {
+		left: -200%;
+	}
+	70% {
+		left: -200%;
+	}
+	75% {
+		left: -300%;
+	}
+	95% {
+		left: -300%;
+	}
+	100% {
+		left: -400%;
+	}  
+}
+#btn{
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #a13237;
+    border: none;
+    border-radius: 10px;
+    z-index: 10;
+    position: relative;
+    transform: translateY(-235px);
+    left: 500px;
+    /*right:500px;*/
+    margin: center;
+    display:flex;
+    width:175px
+}
+    .wrapper{
+        display:flex;
+        flex-direction: column;
+        align-items: center;        
+        justify-content: center;
+    }
+    #title {
+        z-index: 10;
+        position: relative;
+        transform: translateY(-250px);
+        left: 280px;
+        padding: 20px 50px;
+        font-size: 50px;
+        color: white;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #2b2727;
+        font-weight: bold;
+    } 
+
+    #info-title{
+        font-size: 40px;
+        color: var(--text-secondary);
+        font-weight: 600;
+        margin-bottom: 40px;
+        margin-left: 0px;
+    }
+
+    #info-p{
+        font-size: 20px;
+        color: var(--text-secondary);
+        font-weight: 600;
+        margin-bottom: 30px;
+        margin-right: 80px;
+        margin-left: 80px;
+        /*text-indent: 10%;*/
+    }
+
+    #info-p2{
+        font-size: 20px;
+        color: var(--text-secondary);
+        font-weight: 600;
+        margin-bottom: 15px;
+        margin: center;
+    }
+
+    </style>
+
+    </head>
+    <body>
+        <nav> 
+        <div id="nav__top-content">
+            <p id="logo">Logo</p>
+            <p>Placeholder</p>
+        </div>
+        <div id="nav__bottom-content">
+            <a href="#FAQ">FAQ</a>
+            <a href="aboutus.html">About</a>
+            <a href="aboutus.html">Contact</a>
+            </div>
+        </nav>  
+        <div class = "wrapper">
+        <div id="slider">
+            <figure>
+                <img src="images/shelter1.jpg">
+                <img src="images/shelter2.jpg">
+                <img src="images/shelter3.jpg">
+                <img src="images/shelter4.jpeg">
+                <img src="images/shelter1.jpg">
+            </figure>
+            <p id= "title">Find Your Temporary Home</p>
+            <div id="btn">
+            <a href = "form.html"> Join a shelter today!</a>
+                </div>
+                </div>
+                <main> 
+        <p id="info-title">About Us</p>
+    <p id = "info-p">
+        The goal of the app is to direct those who are either homeless 
+        or lack stable housing to a homeless shelter.
+        Once you enter the information required, you will be directed to three 
+        shelters we believe are the best fit for you.
+        From there a location will be provided for each of the three.
+        Thank you for using the app :)
+    </p>
+
+    <h2 id="info-title">Contact Us </h2>
+    <p id="info-p2">
+        &emsp;Email: nameOfCompany@gmail.com
+        &emsp;Phone: 123-555-6789
+        &emsp;Instagram: @nameOfCompany        
+        
+    </p>                
+          </main>      
+        </div>        
+        
+    </body>
+</html>
