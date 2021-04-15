@@ -24,6 +24,11 @@ main {
     width: 100%
 }
 
+#main__shelter-map {
+    height: 200px;
+    width: 100%;
+}
+
 .shelter-list__shelter {
     display: grid;
     grid-template-columns: 24% 24% 24% 24%;
